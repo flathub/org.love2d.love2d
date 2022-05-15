@@ -35,8 +35,8 @@ modules:
       - install -Dm644 org.love2d.love2d.metainfo.xml /app/share/appdata/org.love2d.love2d.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/love2d/love/releases/download/11.3/love-11.3-linux-src.tar.gz
-        sha256: 649f0db7750ca121e4de7b60208703661052356df35f4cfad490b1ba14dd1455
+        url: https://github.com/love2d/love/releases/download/11.4/love-11.4-linux-src.tar.gz
+        sha256: e32feecaf5f4f210242a4b5f26cdf9ce9014bfde18d51286f643bb7fe51f5369
 
       - type: file
         path: org.love2d.love2d.metainfo.xml

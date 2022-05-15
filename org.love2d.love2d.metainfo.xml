@@ -1,27 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop-application">
+<?xml version='1.0' encoding='utf-8'?>
+<component type="desktop">
+  <!--Created with jdAppdataEdit 3.1-->
   <id>org.love2d.love2d</id>
   <name>LÖVE</name>
   <summary>LÖVE is an awesome 2D game framework for Lua.</summary>
+  <developer_name>Love2d Developers</developer_name>
+  <launchable type="desktop-id">org.love2d.love2d.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>Zlib</project_license>
-  <content_rating type="oars-1.0"/>
   <description>
     <p>LÖVE is an awesome 2D game framework for Lua. </p>
   </description>
-  <launchable type="desktop-id">org.love2d.love2d.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://love2d.org/w/images/9/9b/11.0-NoGame.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="11.4" date="2022-01-02" type="stable">
+      <description>
+        <ul>
+          <li>Added a variant of love.filesystem.newFileData which accepts a Data object.</li>
+          <li>Added Body:getLocalPoints.</li>
+          <li>Added Font:getKerning.</li>
+          <li>Added support for r16, rg16, and rgba16 pixel formats in Canvases.</li>
+          <li>Added Shader:send(name, matrixlayout, data, ...) variant, whose argument order is more consistent than Shader:send(name, data, matrixlayout, ...).</li>
+        </ul>
+      </description>
+    </release>
+    <release version="11.3" date="2020-01-11" type="stable"/>
+  </releases>
   <url type="homepage">https://love2d.org/</url>
   <url type="bugtracker">https://github.com/love2d/love/issues</url>
   <url type="help">https://love2d.org/wiki/Main_Page</url>
   <url type="vcs-browser">https://github.com/love2d/love</url>
-  <screenshots>
-    <screenshot type="default">https://love2d.org/w/images/9/9b/11.0-NoGame.png</screenshot>
-  </screenshots>
-  <releases>
-    <release version="11.3" date="2020-01-12"/>
-  </releases>
   <categories>
     <category>Games</category>
   </categories>
-  <developer_name>Love2d Developers</developer_name>
-</component>  
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>gamepad</control>
+  </supports>
+  <content_rating type="oars-1.1"/>
+  <keywords>
+    <keyword>lua</keyword>
+  </keywords>
+</component>
