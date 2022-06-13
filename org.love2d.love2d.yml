@@ -32,7 +32,8 @@ modules:
       - mv /app/share/pixmaps/love.svg /app/share/icons/hicolor/scalable/apps/org.love2d.love2d.svg
       - mv /app/share/applications/love.desktop /app/share/applications/org.love2d.love2d.desktop
       - desktop-file-edit /app/share/applications/org.love2d.love2d.desktop --set-icon=org.love2d.love2d
-      - install -Dm644 org.love2d.love2d.metainfo.xml /app/share/appdata/org.love2d.love2d.metainfo.xml
+      - install -Dm644 org.love2d.love2d.metainfo.xml /app/share/metainfo/org.love2d.love2d.metainfo.xml
+      - mv /app/share/mime/packages/love.xml /app/share/mime/packages/org.love2d.love2d.xml
     sources:
       - type: archive
         url: https://github.com/love2d/love/releases/download/11.4/love-11.4-linux-src.tar.gz
