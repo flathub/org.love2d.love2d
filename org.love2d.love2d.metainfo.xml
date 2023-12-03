@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
   <!--Created with jdAppdataEdit 3.1-->
   <id>org.love2d.love2d</id>
@@ -17,6 +17,7 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="11.5" date="2023-12-03"/>
     <release version="11.4" date="2022-01-02" type="stable">
       <description>
         <ul>
