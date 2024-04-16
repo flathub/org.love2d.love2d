@@ -4,6 +4,7 @@ runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 command: love
 finish-args:
+  - --filesystem=host:ro
   - --socket=fallback-x11
   - --socket=wayland
   - --device=all
