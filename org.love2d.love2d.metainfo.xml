@@ -1,23 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop">
-  <!--Created with jdAppdataEdit 3.1-->
+<?xml version='1.0' encoding='utf-8'?>
+<component type="desktop-application">
+  <!--Created with jdAppStreamEdit 9.0-->
   <id>org.love2d.love2d</id>
   <name>LÖVE</name>
   <summary>LÖVE is an awesome 2D game framework for Lua.</summary>
-  <developer_name>Love2d Developers</developer_name>
-  <launchable type="desktop-id">org.love2d.love2d.desktop</launchable>
+  <developer id="org.love2d">
+    <name>Love2d Developers</name>
+  </developer>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>Zlib</project_license>
   <description>
-    <p>LÖVE is an awesome 2D game framework for Lua. </p>
+    <p>LÖVE is an awesome 2D game framework for Lua.</p>
   </description>
   <screenshots>
     <screenshot type="default">
+      <caption>LÖVE running without a Game</caption>
       <image type="source">https://love2d.org/w/images/9/9b/11.0-NoGame.png</image>
     </screenshot>
   </screenshots>
   <releases>
-    <release version="11.5" date="2023-12-03"/>
+    <release version="11.5" date="2023-12-03" type="stable"/>
     <release version="11.4" date="2022-01-02" type="stable">
       <description>
         <ul>
@@ -37,6 +39,7 @@
   <url type="vcs-browser">https://github.com/love2d/love</url>
   <categories>
     <category>Game</category>
+    <category>Development</category>
   </categories>
   <supports>
     <control>pointing</control>
@@ -44,6 +47,11 @@
     <control>gamepad</control>
   </supports>
   <content_rating type="oars-1.1"/>
+  <launchable type="desktop-id">org.love2d.love2d.desktop</launchable>
+  <provides>
+    <binary>love</binary>
+    <mediatype>application/x-love-game</mediatype>
+  </provides>
   <keywords>
     <keyword>lua</keyword>
   </keywords>
