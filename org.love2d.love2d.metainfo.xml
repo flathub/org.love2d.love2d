@@ -38,7 +38,7 @@
   <url type="help">https://love2d.org/wiki/Main_Page</url>
   <url type="vcs-browser">https://github.com/love2d/love</url>
   <categories>
-    <category>Games</category>
+    <category>Game</category>
   </categories>
   <supports>
     <control>pointing</control>
