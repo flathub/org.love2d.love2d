@@ -1,4 +1,4 @@
-app-id: org.love2d.love2d
+id: org.love2d.love2d
 runtime: org.freedesktop.Platform
 runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
@@ -11,8 +11,16 @@ finish-args:
   - --socket=pulseaudio
   - --share=ipc
   - --share=network
+cleanup:
+  - /lib/pkgconfig
+  - /share/man
+  - /include
+  - "*.la"
+  - "*.a"
+
 modules:
   - name: luajit
+    buildsystem: autotools
     no-autogen: true
     make-install-args:
       - PREFIX=/app
@@ -25,8 +33,13 @@ modules:
           project-id: 6444
           stable-only: false
           url-template: https://luajit.org/download/LuaJIT-$version.tar.gz
+    cleanup:
+      - /share/lua
+      - /lib/lua
+      - /bin
 
   - name: libmodplug
+    buildsystem: autotools
     sources:
       - type: archive
         url: https://downloads.sourceforge.net/modplug-xmms/libmodplug-0.8.9.0.tar.gz
@@ -37,6 +50,7 @@ modules:
           url-template: https://downloads.sourceforge.net/modplug-xmms/libmodplug-$version.tar.gz
 
   - name: love2d
+    buildsystem: autotools
     post-install:
       - mkdir -p /app/share/icons/hicolor/scalable/apps
       - mv /app/share/pixmaps/love.svg /app/share/icons/hicolor/scalable/apps/org.love2d.love2d.svg
@@ -55,6 +69,7 @@ modules:
           url-query: .assets[] | select(.name | test ("^.+linux-src\\.tar\\.gz$"))
             | .browser_download_url
           is-main-source: true
-
       - type: file
         path: org.love2d.love2d.metainfo.xml
+    cleanup:
+      - /share/pixmaps
