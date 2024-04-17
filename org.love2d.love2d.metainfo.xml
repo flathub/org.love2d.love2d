@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <component type="desktop-application">
-  <!--Created with jdAppStreamEdit 8.0-->
+  <!--Created with jdAppStreamEdit 9.0-->
   <id>org.love2d.love2d</id>
   <name>LÖVE</name>
   <summary>LÖVE is an awesome 2D game framework for Lua.</summary>
@@ -39,6 +39,7 @@
   <url type="vcs-browser">https://github.com/love2d/love</url>
   <categories>
     <category>Game</category>
+    <category>Development</category>
   </categories>
   <supports>
     <control>pointing</control>
@@ -46,8 +47,10 @@
     <control>gamepad</control>
   </supports>
   <content_rating type="oars-1.1"/>
+  <launchable type="desktop-id">org.love2d.love2d.desktop</launchable>
   <provides>
     <binary>love</binary>
+    <mediatype>application/x-love-game</mediatype>
   </provides>
   <keywords>
     <keyword>lua</keyword>
