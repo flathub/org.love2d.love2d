@@ -15,7 +15,7 @@
   <screenshots>
     <screenshot type="default">
       <caption>LÖVE running without a Game</caption>
-      <image type="source">https://love2d.org/w/images/9/9b/11.0-NoGame.png</image>
+      <image type="source">https://github.com/flathub/org.love2d.love2d/blob/7ec9a7024a62d08a809c9d79c531175446c180d0/screenshot.png?raw=true</image>
     </screenshot>
   </screenshots>
   <releases>
