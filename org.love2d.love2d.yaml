@@ -1,16 +1,17 @@
 id: org.love2d.love2d
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 command: love
 finish-args:
-  - --filesystem=host:ro
+  - --env=SDL_APP_ID=org.love2d.love2d
   - --socket=fallback-x11
-  - --socket=wayland
-  - --device=all
+  - --filesystem=host:ro
   - --socket=pulseaudio
-  - --share=ipc
+  - --socket=wayland
   - --share=network
+  - --device=all
+  - --share=ipc
 cleanup:
   - /lib/pkgconfig
   - /share/man
@@ -19,24 +20,7 @@ cleanup:
   - "*.a"
 
 modules:
-  - name: luajit
-    buildsystem: autotools
-    no-autogen: true
-    make-install-args:
-      - PREFIX=/app
-    sources:
-      - type: archive
-        url: https://luajit.org/download/LuaJIT-2.1.0-beta3.tar.gz
-        sha256: 1ad2e34b111c802f9d0cdf019e986909123237a28c746b21295b63c9e785d9c3
-        x-checker-data:
-          type: anitya
-          project-id: 6444
-          stable-only: false
-          url-template: https://luajit.org/download/LuaJIT-$version.tar.gz
-    cleanup:
-      - /share/lua
-      - /lib/lua
-      - /bin
+  - shared-modules/luajit/luajit.json
 
   - name: libmodplug
     buildsystem: autotools
@@ -57,7 +41,8 @@ modules:
       - mv /app/share/applications/love.desktop /app/share/applications/org.love2d.love2d.desktop
       - desktop-file-edit /app/share/applications/org.love2d.love2d.desktop --set-icon=org.love2d.love2d --set-key=NoDisplay --set-value=false
       - install -Dm644 org.love2d.love2d.metainfo.xml /app/share/metainfo/org.love2d.love2d.metainfo.xml
-      - mv /app/share/mime/packages/love.xml /app/share/mime/packages/org.love2d.love2d.xml
+      - install -Dm644 org.love2d.love2d.xml /app/share/mime/packages/org.love2d.love2d.xml
+      - rm /app/share/mime/packages/love.xml
     sources:
       - type: archive
         url: https://github.com/love2d/love/releases/download/11.5/love-11.5-linux-src.tar.gz
@@ -71,5 +56,7 @@ modules:
           is-main-source: true
       - type: file
         path: org.love2d.love2d.metainfo.xml
+      - type: file
+        path: org.love2d.love2d.xml
     cleanup:
       - /share/pixmaps
