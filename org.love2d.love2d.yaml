@@ -3,6 +3,9 @@ runtime: org.freedesktop.Platform
 runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 command: love
+rename-mime-file: love.xml
+rename-mime-icons:
+  - application-x-love-game
 finish-args:
   - --env=SDL_APP_ID=org.love2d.love2d
   - --socket=fallback-x11
@@ -41,8 +44,6 @@ modules:
       - mv /app/share/applications/love.desktop /app/share/applications/org.love2d.love2d.desktop
       - desktop-file-edit /app/share/applications/org.love2d.love2d.desktop --set-icon=org.love2d.love2d --set-key=NoDisplay --set-value=false
       - install -Dm644 org.love2d.love2d.metainfo.xml /app/share/metainfo/org.love2d.love2d.metainfo.xml
-      - install -Dm644 org.love2d.love2d.xml /app/share/mime/packages/org.love2d.love2d.xml
-      - rm /app/share/mime/packages/love.xml
     sources:
       - type: archive
         url: https://github.com/love2d/love/releases/download/11.5/love-11.5-linux-src.tar.gz
@@ -56,7 +57,5 @@ modules:
           is-main-source: true
       - type: file
         path: org.love2d.love2d.metainfo.xml
-      - type: file
-        path: org.love2d.love2d.xml
     cleanup:
       - /share/pixmaps
