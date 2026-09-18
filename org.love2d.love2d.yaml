@@ -1,6 +1,6 @@
 id: org.love2d.love2d
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 command: love
 rename-mime-file: love.xml
